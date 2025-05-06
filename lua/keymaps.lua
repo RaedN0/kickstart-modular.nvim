@@ -17,19 +17,29 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- TIP: Disable arrow keys in normal mode
--- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
--- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
--- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
--- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
+vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
+vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
+vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 --
 --  See `:help wincmd` for a list of all window commands
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+vim.keymap.set('n', '<leader>sv', '<C-w>v', { desc = 'Split Vertically' })
+vim.keymap.set('n', '<leader>sh', '<C-w>s', { desc = 'Split Horizontally' })
+vim.keymap.set('n', '<leader>sx', '<C-w>c', { desc = 'Close split' })
+
+vim.keymap.set('n', '<leader>h', '<C-w>h', { desc = 'Move focus to the left window' })
+vim.keymap.set('n', '<leader>l', '<C-w>l', { desc = 'Move focus to the right window' })
+vim.keymap.set('n', '<leader>j', '<C-w>j', { desc = 'Move focus to the lower window' })
+vim.keymap.set('n', '<leader>k', '<C-w>k', { desc = 'Move focus to the upper window' })
+
+-- Tabs
+vim.keymap.set('n', '<leader>tn', ':tabnew<CR>', { desc = 'Open new tab' })
+vim.keymap.set('n', '<leader>tx', ':tabclose<CR>', { desc = 'Close current tab' })
+vim.keymap.set('n', '<C-l>', ':tabnext<CR>', { desc = 'Next tab' })
+vim.keymap.set('n', '<C-h>', ':tabprevious<CR>', { desc = 'Previous tab' })
 
 -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
 -- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
